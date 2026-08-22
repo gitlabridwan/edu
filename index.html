@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Edu Episians</title>
 
@@ -17,14 +17,30 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            min-height: 100dvh;
             overflow: hidden;
+            background: #ffffff;
         }
 
         iframe {
             display: block;
             width: 100%;
-            height: 100vh;
+            height: 100dvh;
+            min-height: 100dvh;
             border: none;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* Khusus browser HP lama */
+        @supports not (height: 100dvh) {
+            iframe {
+                height: 100vh;
+            }
+
+            html,
+            body {
+                height: 100vh;
+            }
         }
     </style>
 </head>
@@ -33,7 +49,8 @@
 
     <iframe
         src="https://script.google.com/macros/s/AKfycbylElyH3I5RZHk1Xz2wtB4lVtiY1nAATcZxvNn994ThK87brWXVLZyAL2UL_Z6dWK7Thw/exec"
-        title="Edu Episians">
+        title="Edu Episians"
+        allow="fullscreen">
     </iframe>
 
 </body>
